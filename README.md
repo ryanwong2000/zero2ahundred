@@ -1,3 +1,7 @@
+Inspired by [this game](https://www.sporcle.com/games/RobPro/1-100-click-me) on Sporcle
+
+reference https://stackoverflow.com/questions/48350451/clicking-buttons-in-set-order-ie-1-2-3-4-5
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
