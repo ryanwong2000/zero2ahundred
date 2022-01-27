@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 export default function Button() {
+  const style = {
+    margin: '3px'
+  };
+
   const numberOfButtons = 101;
 
   // https://bost.ocks.org/mike/shuffle/
@@ -36,7 +40,7 @@ export default function Button() {
   return (
     <div>
       {numbers.map((number) => (
-        <button>{number}</button>
+        <button style={style}>{number}</button>
       ))}
     </div>
   );
