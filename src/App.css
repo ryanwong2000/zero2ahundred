@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.game {
+  margin: 10%;
+  outline-color: red;
+  outline-style: solid;
+  outline-width: 1px;
+  padding: 10px;
+}

@@ -2,13 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const numberOfButtons = 100;
+  const numberOfButtons = 101;
 
   // https://bost.ocks.org/mike/shuffle/
-  function shuffleNumbers(numOfButtons) {
+  //shuffles an array of numbers of size n
+  function shuffleNumbers(n) {
     //populate numbers array
     const array = [];
-    for (let i = 0; i < numOfButtons; i++) {
+    for (let i = 0; i < n; i++) {
       array.push(i);
     }
 
@@ -30,10 +31,13 @@ function App() {
 
     return array;
   }
+
+  function handleClick(e) {}
+
   const numbers = shuffleNumbers(numberOfButtons);
   const buttons = numbers.map((number) => <button>{number}</button>);
 
-  return <div>{buttons}</div>;
+  return <div className="game">{buttons}</div>;
 }
 
 export default App;
