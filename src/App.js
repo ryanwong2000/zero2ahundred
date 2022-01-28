@@ -1,12 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import Buttons from './components/Button';
+import './css/App.css';
+import Game from './components/Game';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="game">
-      <Buttons />
-    </div>
+    <>
+      <Header />
+      <Game />
+    </>
   );
 }
 
