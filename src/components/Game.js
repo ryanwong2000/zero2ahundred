@@ -7,7 +7,7 @@ export default class Game extends Component {
     super(props);
     this.state = {
       numberOfButtons: this.props.numberOfButtons,
-      numbers: []
+      numbers: this.shuffleNumbers(this.props.numberOfButtons)
     };
   }
 
@@ -39,7 +39,7 @@ export default class Game extends Component {
     return array;
   }
 
-  numbers = this.shuffleNumbers(this.state.numberOfButtons);
+  // numbers = this.shuffleNumbers(this.state.numberOfButtons);
 
   render() {
     return (
