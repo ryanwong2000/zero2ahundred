@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <Game />
+      <Game numberOfButtons={101} />
     </>
   );
 }

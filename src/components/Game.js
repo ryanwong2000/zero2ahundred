@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Button from './Button.js';
 import '../css/App.css';
 
-export default function Game() {
-  const numberOfButtons = 101;
+export default class Game extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      numberOfButtons: this.props.numberOfButtons,
+      numbers: []
+    };
+  }
 
   // https://bost.ocks.org/mike/shuffle/
   //shuffles an array of numbers of size n
-  function shuffleNumbers(n) {
+  shuffleNumbers(n) {
     //populate numbers array
     const array = [];
     for (let i = 0; i < n; i++) {
@@ -33,13 +39,15 @@ export default function Game() {
     return array;
   }
 
-  const numbers = shuffleNumbers(numberOfButtons);
+  numbers = this.shuffleNumbers(this.state.numberOfButtons);
 
-  return (
-    <div className="game">
-      {numbers.map((number) => (
-        <Button key={number} number={number} />
-      ))}
-    </div>
-  );
+  render() {
+    return (
+      <div className="game">
+        {this.numbers.map((number) => (
+          <Button key={number} number={number} />
+        ))}
+      </div>
+    );
+  }
 }
