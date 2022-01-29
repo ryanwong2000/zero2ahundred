@@ -7,7 +7,8 @@ export default class Game extends Component {
     super(props);
     this.state = {
       numberOfButtons: this.props.numberOfButtons,
-      numbers: this.shuffleNumbers(this.props.numberOfButtons)
+      numbers: this.shuffleNumbers(this.props.numberOfButtons),
+      count: 0
     };
   }
 
@@ -44,9 +45,12 @@ export default class Game extends Component {
   render() {
     return (
       <div className="game">
-        {this.state.numbers.map((number) => (
-          <Button key={number} number={number} />
-        ))}
+        <div>
+          {this.state.numbers.map((number) => (
+            <Button key={number} number={number} />
+          ))}
+        </div>
+        <h2>Score: {this.state.count}</h2>
       </div>
     );
   }
