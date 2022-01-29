@@ -24,7 +24,7 @@ export default class Game extends Component {
       randomIndex;
 
     // While there remain elements to shuffle...
-    while (currentIndex != 0) {
+    while (currentIndex !== 0) {
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
@@ -44,7 +44,7 @@ export default class Game extends Component {
   render() {
     return (
       <div className="game">
-        {this.numbers.map((number) => (
+        {this.state.numbers.map((number) => (
           <Button key={number} number={number} />
         ))}
       </div>
