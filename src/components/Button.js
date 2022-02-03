@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 
 export default function Button(props) {
-  const style = {
-    margin: '3px'
+  const styles = {
+    borderRadius: 4,
+    border: 'none',
+    padding: '8px 12px',
+    margin: 5
   };
 
-  return <button style={style}>{props.number}</button>;
+  return <button style={styles}>{props.number}</button>;
 }
