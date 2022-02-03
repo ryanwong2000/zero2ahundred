@@ -41,10 +41,11 @@ export default class Game extends Component {
     return array;
   }
 
-  handleClick() {
+  handleClick(number) {
     this.setState((state) => ({
       count: state.count + 1
     }));
+    console.log(number);
   }
 
   render() {
@@ -56,7 +57,7 @@ export default class Game extends Component {
               key={number}
               number={number}
               count={this.state.count}
-              handleClick={this.handleClick}
+              handleClick={() => this.handleClick(number)}
             />
           ))}
         </div>
