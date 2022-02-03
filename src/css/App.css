@@ -44,3 +44,7 @@
   outline-width: 1px;
   padding: 10px;
 }
+
+.score {
+  text-align: center;
+}

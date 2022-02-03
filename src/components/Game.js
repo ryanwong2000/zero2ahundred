@@ -44,13 +44,13 @@ export default class Game extends Component {
 
   render() {
     return (
-      <div className="game">
-        <div>
+      <div>
+        <div className="game">
           {this.state.numbers.map((number) => (
-            <Button key={number} number={number} />
+            <Button key={number} number={number} count={this.state.count} />
           ))}
         </div>
-        <h2>Score: {this.state.count}</h2>
+        <h2 className="score">Score: {this.state.count}</h2>
       </div>
     );
   }
