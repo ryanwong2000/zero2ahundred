@@ -8,7 +8,7 @@ export default class Game extends Component {
     this.state = {
       numberOfButtons: this.props.numberOfButtons,
       numbers: this.shuffleNumbers(this.props.numberOfButtons),
-      count: 0
+      count: 1
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -57,7 +57,7 @@ export default class Game extends Component {
               key={number}
               number={number}
               count={this.state.count}
-              handleClick={() => this.handleClick(number)}
+              handleClick={() => this.handleClick(number)} //return event handling function w/ parameter from anon function
             />
           ))}
         </div>

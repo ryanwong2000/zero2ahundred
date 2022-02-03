@@ -14,7 +14,7 @@ export default function Button(props) {
     mouseover: true
   };
 
-  if (props.number <= props.count) {
+  if (props.number < props.count) {
     styles.opacity = 0.4;
     styles.mouseover = false;
   }
