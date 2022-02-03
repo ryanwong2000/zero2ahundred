@@ -8,7 +8,8 @@ export default class Game extends Component {
     this.state = {
       numberOfButtons: this.props.numberOfButtons,
       numbers: this.shuffleNumbers(this.props.numberOfButtons),
-      count: 1
+      count: 1,
+      enabled: true
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -19,7 +20,8 @@ export default class Game extends Component {
     //populate numbers array
     const array = [];
     for (let i = 0; i < n; i++) {
-      array.push(i);
+      if (i === 100) array.push('💯');
+      else array.push(i);
     }
 
     let currentIndex = array.length,
