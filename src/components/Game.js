@@ -10,6 +10,7 @@ export default class Game extends Component {
       numbers: this.shuffleNumbers(this.props.numberOfButtons),
       count: 0
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   // https://bost.ocks.org/mike/shuffle/
@@ -40,12 +41,23 @@ export default class Game extends Component {
     return array;
   }
 
+  handleClick() {
+    this.setState((state) => ({
+      count: state.count + 1
+    }));
+  }
+
   render() {
     return (
       <div>
         <div className="game">
           {this.state.numbers.map((number) => (
-            <Button key={number} number={number} count={this.state.count} />
+            <Button
+              key={number}
+              number={number}
+              count={this.state.count}
+              handleClick={this.handleClick}
+            />
           ))}
         </div>
         <h2 className="score">Score: {this.state.count}</h2>

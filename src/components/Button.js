@@ -8,5 +8,9 @@ export default function Button(props) {
     margin: 5
   };
 
-  return <button style={styles}>{props.number}</button>;
+  return (
+    <button style={styles} onClick={props.handleClick}>
+      {props.number}
+    </button>
+  );
 }
