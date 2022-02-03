@@ -40,8 +40,6 @@ export default class Game extends Component {
     return array;
   }
 
-  // numbers = this.shuffleNumbers(this.state.numberOfButtons);
-
   render() {
     return (
       <div>
