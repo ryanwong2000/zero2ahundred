@@ -9,7 +9,7 @@ export default class Game extends Component {
       numberOfButtons: this.props.numberOfButtons,
       numbers: this.shuffleNumbers(this.props.numberOfButtons),
       count: 1,
-      enabled: true
+      gameOver: false
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -44,10 +44,17 @@ export default class Game extends Component {
   }
 
   handleClick(number) {
+    console.log('clicked', number);
+    if (number !== this.state.count) {
+      console.log('GAME OVER!');
+      this.setState({
+        gameOver: true
+      });
+      return;
+    }
     this.setState((state) => ({
       count: state.count + 1
     }));
-    console.log(number);
   }
 
   render() {
@@ -59,6 +66,7 @@ export default class Game extends Component {
               key={number}
               number={number}
               count={this.state.count}
+              gameOver={this.state.gameOver}
               handleClick={() => this.handleClick(number)} //return event handling function w/ parameter from anon function
             />
           ))}

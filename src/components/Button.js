@@ -26,6 +26,7 @@ export default function Button(props) {
       style={styles}
       onClick={props.handleClick}
       value={props.number}
+      disabled={props.gameOver || props.number < props.count}
     >
       {props.number}
     </button>
